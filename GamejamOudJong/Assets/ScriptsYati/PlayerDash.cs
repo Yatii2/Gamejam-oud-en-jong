@@ -12,51 +12,41 @@ public class PlayerDash : MonoBehaviour
     public Button dashButton;
     public Image cooldownFillImage;
     public TextMeshProUGUI cooldownText;
-    public bool useLastMoveIfAvailable = true;
-    public bool maintainVelocityInFixedUpdate = true;
-    public MonoBehaviour[] disableDuringDash;
+    public bool useRbVelocityForDirection = true;
+    public float minVelocityForDirection = 0.1f;
 
     Rigidbody2D rb;
     bool isDashing = false;
     bool isOnCooldown = false;
-    Vector2 lastMoveDirection = Vector2.right;
 
     public bool IsDashing => isDashing;
+    public bool IsOnCooldown => isOnCooldown;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         if (cooldownFillImage != null) cooldownFillImage.fillAmount = 0f;
         if (cooldownText != null) cooldownText.text = "";
-        if (rb.bodyType == RigidbodyType2D.Kinematic) Debug.LogWarning("Rigidbody2D is Kinematic. Set bodyType to Dynamic for velocity-based dash to work.");
-    }
-
-    void Update()
-    {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        Vector2 input = new Vector2(h, v);
-        if (input.sqrMagnitude > 0.01f) lastMoveDirection = input.normalized;
+        if (rb != null && rb.bodyType == RigidbodyType2D.Kinematic)
+            Debug.LogWarning("Rigidbody2D is Kinematic. Set bodyType to Dynamic for dash to work correctly.");
     }
 
     public void OnDashButtonPressed()
     {
-        if (!isDashing && !isOnCooldown)
-        {
-            Vector2 dashDir = DetermineDashDirection();
-            StartCoroutine(DashRoutine(dashDir));
-            StartCoroutine(CooldownRoutine());
-        }
-    }
-
-    public void SetLastMoveDirection(Vector2 dir)
-    {
-        if (dir.sqrMagnitude > 0.01f) lastMoveDirection = dir.normalized;
+        if (isDashing || isOnCooldown) return;
+        Vector2 dir = DetermineDashDirection();
+        if (dir.sqrMagnitude <= 0.0001f) dir = transform.localScale.x >= 0 ? Vector2.right : Vector2.left;
+        StartCoroutine(DashRoutine(dir));
+        StartCoroutine(CooldownRoutine());
     }
 
     Vector2 DetermineDashDirection()
     {
-        if (useLastMoveIfAvailable && lastMoveDirection.sqrMagnitude > 0.01f) return lastMoveDirection.normalized;
+        if (useRbVelocityForDirection && rb != null)
+        {
+            Vector2 v = rb.linearVelocity;
+            if (v.magnitude >= minVelocityForDirection) return v.normalized;
+        }
         float face = transform.localScale.x >= 0 ? 1f : -1f;
         return new Vector2(face, 0f);
     }
@@ -64,34 +54,17 @@ public class PlayerDash : MonoBehaviour
     IEnumerator DashRoutine(Vector2 direction)
     {
         isDashing = true;
-        if (disableDuringDash != null)
+        float t = 0f;
+        while (t < dashDuration)
         {
-            for (int i = 0; i < disableDuringDash.Length; i++) if (disableDuringDash[i] != null) disableDuringDash[i].enabled = false;
-        }
-
-        if (maintainVelocityInFixedUpdate)
-        {
-            float t = 0f;
-            while (t < dashDuration)
+            if (rb != null)
             {
-                rb.linearVelocity = direction.normalized * dashSpeed;
-                t += Time.fixedDeltaTime;
-                yield return new WaitForFixedUpdate();
+                Vector2 next = rb.position + direction.normalized * dashSpeed * Time.fixedDeltaTime;
+                rb.MovePosition(next);
             }
+            t += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
-        else
-        {
-            rb.linearVelocity = direction.normalized * dashSpeed;
-            yield return new WaitForSeconds(dashDuration);
-        }
-
-        rb.linearVelocity = Vector2.zero;
-
-        if (disableDuringDash != null)
-        {
-            for (int i = 0; i < disableDuringDash.Length; i++) if (disableDuringDash[i] != null) disableDuringDash[i].enabled = true;
-        }
-
         isDashing = false;
     }
 

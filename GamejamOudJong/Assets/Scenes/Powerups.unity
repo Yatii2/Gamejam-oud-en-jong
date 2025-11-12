@@ -255,6 +255,204 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41992720}
   m_CullTransparentMesh: 1
+--- !u!1001 &123065738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876813681303662488, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: controlScheme
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: m_Name
+      value: OldMan
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 123065741}
+    - targetCorrespondingSourceObject: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 123065740}
+  m_SourcePrefab: {fileID: 100100000, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+--- !u!1 &123065739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+  m_PrefabInstance: {fileID: 123065738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &123065740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123065739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d899267730f5654ebd28af5c67b684b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Wallhacks
+  phaseDuration: 1
+  phaseCooldown: 2
+  wallhackButton: {fileID: 1872585927}
+  cooldownFillImage: {fileID: 0}
+  cooldownText: {fileID: 41992722}
+--- !u!114 &123065741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123065739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50f9d814421ade40998553aa583f965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDash
+  dashSpeed: 20
+  dashDuration: 0.15
+  dashCooldown: 10
+  dashButton: {fileID: 743924231}
+  cooldownFillImage: {fileID: 0}
+  cooldownText: {fileID: 1778982186}
+  useRbVelocityForDirection: 1
+  minVelocityForDirection: 0.1
+--- !u!1001 &183267403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.56215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.33571
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230045157851222403, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_Name
+      value: Child
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 183267405}
+  m_SourcePrefab: {fileID: 100100000, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+--- !u!1 &183267404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+  m_PrefabInstance: {fileID: 183267403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &183267405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183267404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50f9d814421ade40998553aa583f965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerupYoung
+  dashSpeed: 20
+  dashDuration: 0.15
+  dashCooldown: 10
+  dashButton: {fileID: 711684990}
+  cooldownFillImage: {fileID: 0}
+  cooldownText: {fileID: 1375955725}
+  useRbVelocityForDirection: 1
+  minVelocityForDirection: 0.1
 --- !u!1 &292649338
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &399869498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -669,9 +867,8 @@ MonoBehaviour:
   dashButton: {fileID: 711684990}
   cooldownFillImage: {fileID: 0}
   cooldownText: {fileID: 1375955725}
-  useLastMoveIfAvailable: 1
-  maintainVelocityInFixedUpdate: 1
-  disableDuringDash: []
+  useRbVelocityForDirection: 1
+  minVelocityForDirection: 0.1
 --- !u!1 &418264734
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &591101821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -904,9 +1101,8 @@ MonoBehaviour:
   dashButton: {fileID: 743924231}
   cooldownFillImage: {fileID: 0}
   cooldownText: {fileID: 1778982186}
-  useLastMoveIfAvailable: 1
-  maintainVelocityInFixedUpdate: 1
-  disableDuringDash: []
+  useRbVelocityForDirection: 1
+  minVelocityForDirection: 0.1
 --- !u!50 &591101826
 Rigidbody2D:
   serializedVersion: 5
@@ -1080,25 +1276,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 399869503}
-        m_TargetAssemblyTypeName: PowerupYoung, Assembly-CSharp
+      - m_Target: {fileID: 183267405}
+        m_TargetAssemblyTypeName: PlayerDash, Assembly-CSharp
         m_MethodName: OnDashButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PowerupYoung, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1225,7 +1409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 591101825}
+      - m_Target: {fileID: 123065741}
         m_TargetAssemblyTypeName: PlayerDash, Assembly-CSharp
         m_MethodName: OnDashButtonPressed
         m_Mode: 1
@@ -1984,7 +2168,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 591101827}
+      - m_Target: {fileID: 123065740}
         m_TargetAssemblyTypeName: Wallhacks, Assembly-CSharp
         m_MethodName: OnPhaseButtonPressed
         m_Mode: 1
@@ -2135,3 +2319,5 @@ SceneRoots:
   - {fileID: 399869499}
   - {fileID: 591101822}
   - {fileID: 292649341}
+  - {fileID: 183267403}
+  - {fileID: 123065738}
