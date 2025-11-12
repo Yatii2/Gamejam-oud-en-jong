@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Animations;
 
 [RequireComponent(typeof(Collider2D))]
 public class LocalPlayerController : MonoBehaviour
@@ -166,7 +167,7 @@ public class LocalPlayerController : MonoBehaviour
 
         wallhacksAction.performed += ctx =>
         {
-            if (wa != null ) wa.OnPhaseButtonPressed();
+            if (wa != null) wa.OnPhaseButtonPressed();
         };
     }
 
