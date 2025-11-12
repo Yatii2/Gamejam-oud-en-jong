@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 114244303}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Child
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpScript
   score: 0
+  winningScore: 0
 --- !u!212 &114244300
 SpriteRenderer:
   m_ObjectHideFlags: 0
