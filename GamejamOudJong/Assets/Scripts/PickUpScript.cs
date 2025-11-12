@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUpScript : MonoBehaviour
 {
     public int score = 0;
     [SerializeField] public int winningScore;
 
+    [SerializeField] private RectTransform oldRect;
+    [SerializeField] private RectTransform childRect;
     public void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("OnCollisionEnter");
@@ -17,15 +20,17 @@ public class PickUpScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Child"))
         {
-            //trigger hier de old man wins screen
+            Debug.Log("Child dies, old man wins");
+            Destroy(other.gameObject);
+            oldRect.gameObject.SetActive(true);
         }
-    }
-
-    private void Update()
-    {
-        if (score >= winningScore)
+        else
         {
-            //trigger hier de child wins script
-        } 
+            if (score >= winningScore)
+            {
+                Debug.Log("Child has collected all keys, Child wins!");
+                childRect.gameObject.SetActive(true);
+            } 
+        }
     }
 }
