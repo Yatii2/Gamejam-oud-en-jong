@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 3679574948167788471}
   - component: {fileID: 7742681396224951015}
   - component: {fileID: 2876813681303662488}
+  - component: {fileID: -7842367131230121473}
+  - component: {fileID: 1640959732720450178}
   m_Layer: 0
   m_Name: OldMan
-  m_TagString: Untagged
+  m_TagString: OldMan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.21127, y: 1.25305, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -171,4 +173,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocalPlayerController
   speed: 5
   rb: {fileID: 3679574948167788471}
-  controlScheme: 2
+  controlScheme: 1
+--- !u!114 &-7842367131230121473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029682945378974547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79997a9e5ae4f941a8ac4da666b035c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpScript
+  score: 0
+  winningScore: 4
+  oldRect: {fileID: 0}
+  childRect: {fileID: 0}
+--- !u!114 &1640959732720450178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029682945378974547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50f9d814421ade40998553aa583f965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDash
+  dashSpeed: 20
+  dashDuration: 0.15
+  dashCooldown: 10
+  dashButton: {fileID: 0}
+  cooldownFillImage: {fileID: 0}
+  cooldownText: {fileID: 0}
+  useRbVelocityForDirection: 1
+  minVelocityForDirection: 0.1

@@ -13,9 +13,12 @@ GameObject:
   - component: {fileID: 2942328546061995497}
   - component: {fileID: 7296431951750068028}
   - component: {fileID: 3569452307168417067}
+  - component: {fileID: 4106512253113147968}
+  - component: {fileID: 3521468834032638494}
+  - component: {fileID: 6585173989517110671}
   m_Layer: 0
   m_Name: Child
-  m_TagString: Untagged
+  m_TagString: Child
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +33,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.82, y: 1.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -169,6 +172,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a78a7ea928442aca76fc425a7d45f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalPlayerController
-  speed: 5
+  speed: 4
   rb: {fileID: 2942328546061995497}
   controlScheme: 0
+--- !u!114 &4106512253113147968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617677740942476095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79997a9e5ae4f941a8ac4da666b035c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpScript
+  score: 0
+  winningScore: 4
+  oldRect: {fileID: 0}
+  childRect: {fileID: 0}
+--- !u!114 &3521468834032638494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617677740942476095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50f9d814421ade40998553aa583f965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerupYoung
+  dashSpeed: 20
+  dashDuration: 0.15
+  dashCooldown: 10
+  dashButton: {fileID: 0}
+  cooldownFillImage: {fileID: 0}
+  cooldownText: {fileID: 0}
+  useRbVelocityForDirection: 1
+  minVelocityForDirection: 0.1
+--- !u!114 &6585173989517110671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617677740942476095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d899267730f5654ebd28af5c67b684b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Wallhacks
+  phaseDuration: 1
+  phaseCooldown: 20
+  wallhackButton: {fileID: 0}
+  cooldownFillImage: {fileID: 0}
+  cooldownText: {fileID: 0}
