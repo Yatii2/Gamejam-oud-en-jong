@@ -83,13 +83,20 @@ public class LocalPlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (moveAction == null) return;
+        if (moveAction == null)
+        {
+            return;
+        }
 
         var read = moveAction.ReadValue<Vector2>();
-        if (read != Vector2.zero) moveValue = read;
-
-        if (moveValue.sqrMagnitude > 1f) moveValue = moveValue.normalized;
-
+        if (read != Vector2.zero)
+        {
+            moveValue = read;
+        }
+        if (moveValue.sqrMagnitude > 1f)
+        {
+            moveValue = moveValue.normalized;
+        }
         if (rb != null)
         {
             rb.linearVelocity = moveValue * speed;
@@ -124,7 +131,9 @@ public class LocalPlayerController : MonoBehaviour
         rebind.Start();
 
         while (!rebind.completed)
+        {
             yield return null;
+        }
     }
 
     public void LogBindings()
