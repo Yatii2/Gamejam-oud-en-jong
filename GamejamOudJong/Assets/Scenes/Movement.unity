@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocalPlayerController
   speed: 5
   rb: {fileID: 1287587321}
-  controlScheme: 0
+  controlScheme: 2
 --- !u!50 &1287587321
 Rigidbody2D:
   serializedVersion: 5

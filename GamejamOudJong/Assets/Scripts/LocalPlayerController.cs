@@ -10,6 +10,7 @@ public class LocalPlayerController : MonoBehaviour
     {
         WASD,
         Arrows,
+        JoyStick,
         Auto
     }
 
@@ -75,7 +76,14 @@ public class LocalPlayerController : MonoBehaviour
                 .With("Right", "<Keyboard>/rightArrow");
         }
 
-        moveAction.AddBinding("<Gamepad>/leftStick");
+        if (controlScheme == ControlScheme.JoyStick || controlScheme == ControlScheme.Auto)
+        {
+            moveAction.AddCompositeBinding("2DVector")
+                .With("Up", "<Gamepad>/leftStick/up")
+                .With("Down", "<Gamepad>/leftStick/down")
+                .With("Left", "<Gamepad>/leftStick/left")
+                .With("Right", "<Gamepad>/leftStick/right");
+        }
 
         moveAction.performed += ctx => moveValue = ctx.ReadValue<Vector2>();
         moveAction.canceled += ctx => moveValue = Vector2.zero;
