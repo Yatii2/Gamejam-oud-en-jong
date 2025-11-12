@@ -263,6 +263,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1640959732720450178, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: dashButton
+      value: 
+      objectReference: {fileID: 743924231}
+    - target: {fileID: 1640959732720450178, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: cooldownText
+      value: 
+      objectReference: {fileID: 1778982186}
+    - target: {fileID: 1826807405390154216, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: cooldownText
+      value: 
+      objectReference: {fileID: 41992722}
+    - target: {fileID: 1826807405390154216, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: wallhackButton
+      value: 
+      objectReference: {fileID: 1872585927}
     - target: {fileID: 2622409473935829295, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01
@@ -305,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2876813681303662488, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
       propertyPath: controlScheme
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
       propertyPath: m_Name
@@ -314,56 +330,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 123065741}
-    - targetCorrespondingSourceObject: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 123065740}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
---- !u!1 &123065739 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+--- !u!114 &123065740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1826807405390154216, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
   m_PrefabInstance: {fileID: 123065738}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &123065740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123065739}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d899267730f5654ebd28af5c67b684b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wallhacks
-  phaseDuration: 1
-  phaseCooldown: 2
-  wallhackButton: {fileID: 1872585927}
-  cooldownFillImage: {fileID: 0}
-  cooldownText: {fileID: 41992722}
---- !u!114 &123065741
+--- !u!114 &123065741 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1640959732720450178, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+  m_PrefabInstance: {fileID: 123065738}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123065739}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b50f9d814421ade40998553aa583f965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDash
-  dashSpeed: 20
-  dashDuration: 0.15
-  dashCooldown: 10
-  dashButton: {fileID: 743924231}
-  cooldownFillImage: {fileID: 0}
-  cooldownText: {fileID: 1778982186}
-  useRbVelocityForDirection: 1
-  minVelocityForDirection: 0.1
 --- !u!1001 &183267403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -412,47 +402,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3521468834032638494, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: dashButton
+      value: 
+      objectReference: {fileID: 711684990}
+    - target: {fileID: 3521468834032638494, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+      propertyPath: cooldownText
+      value: 
+      objectReference: {fileID: 1375955725}
     - target: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
       propertyPath: m_Name
       value: Child
       objectReference: {fileID: 0}
-    - target: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 183267405}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
---- !u!1 &183267404 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8617677740942476095, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
+--- !u!114 &183267405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3521468834032638494, guid: f500a5e2b76780245bd33d017efb79cc, type: 3}
   m_PrefabInstance: {fileID: 183267403}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &183267405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183267404}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b50f9d814421ade40998553aa583f965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerupYoung
-  dashSpeed: 20
-  dashDuration: 0.15
-  dashCooldown: 10
-  dashButton: {fileID: 711684990}
-  cooldownFillImage: {fileID: 0}
-  cooldownText: {fileID: 1375955725}
-  useRbVelocityForDirection: 1
-  minVelocityForDirection: 0.1
 --- !u!1 &292649338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -835.2943, y: -245}
+  m_AnchoredPosition: {x: -484, y: 204}
   m_SizeDelta: {x: 170.0616, y: 116.2692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711684990
@@ -1362,7 +1339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811, y: -245}
+  m_AnchoredPosition: {x: 471, y: 75}
   m_SizeDelta: {x: 170.0616, y: 116.2692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &743924231
@@ -2121,7 +2098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811, y: -89}
+  m_AnchoredPosition: {x: 483, y: 222}
   m_SizeDelta: {x: 170.0616, y: 116.2692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872585927
