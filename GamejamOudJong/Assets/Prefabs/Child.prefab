@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3569452307168417067}
   - component: {fileID: 4106512253113147968}
   - component: {fileID: 3521468834032638494}
+  - component: {fileID: 6585173989517110671}
   m_Layer: 0
   m_Name: Child
   m_TagString: Child
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a78a7ea928442aca76fc425a7d45f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalPlayerController
-  speed: 5
+  speed: 4
   rb: {fileID: 2942328546061995497}
   controlScheme: 0
 --- !u!114 &4106512253113147968
@@ -187,7 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpScript
   score: 0
-  winningScore: 0
+  winningScore: 4
+  oldRect: {fileID: 0}
+  childRect: {fileID: 0}
 --- !u!114 &3521468834032638494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +211,20 @@ MonoBehaviour:
   cooldownText: {fileID: 0}
   useRbVelocityForDirection: 1
   minVelocityForDirection: 0.1
+--- !u!114 &6585173989517110671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617677740942476095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d899267730f5654ebd28af5c67b684b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Wallhacks
+  phaseDuration: 1
+  phaseCooldown: 20
+  wallhackButton: {fileID: 0}
+  cooldownFillImage: {fileID: 0}
+  cooldownText: {fileID: 0}

@@ -319,6 +319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2876813681303662488, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
+      propertyPath: controlScheme
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8029682945378974547, guid: 6854ee34f964875439fc7a03ed505c3a, type: 3}
       propertyPath: m_Name
       value: OldMan
@@ -1202,7 +1206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -835.2943, y: -245}
+  m_AnchoredPosition: {x: -484, y: 204}
   m_SizeDelta: {x: 170.0616, y: 116.2692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711684990
@@ -1335,7 +1339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811, y: -245}
+  m_AnchoredPosition: {x: 471, y: 75}
   m_SizeDelta: {x: 170.0616, y: 116.2692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &743924231
@@ -2094,7 +2098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811, y: -89}
+  m_AnchoredPosition: {x: 483, y: 222}
   m_SizeDelta: {x: 170.0616, y: 116.2692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872585927

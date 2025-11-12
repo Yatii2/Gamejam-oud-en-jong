@@ -24,7 +24,11 @@ public class LocalPlayerController : MonoBehaviour
 
     // Runtime objects
     private InputAction moveAction;
+    private InputAction dashAction;
+    private InputAction wallhacksAction;
     private Vector2 moveValue;
+    private PlayerDash playerDash;
+    private Wallhacks wa;
 
     private void Awake()
     {
@@ -33,7 +37,12 @@ public class LocalPlayerController : MonoBehaviour
             rb = GetComponent<Rigidbody2D>();
         }
 
+        playerDash = GetComponent<PlayerDash>();
+        wa = GetComponent<Wallhacks>();
+        
         CreateMoveAction();
+        CreateDashAction();
+        CreateWallhacksAction();
     }
 
     private void OnEnable()
@@ -41,6 +50,16 @@ public class LocalPlayerController : MonoBehaviour
         if (moveAction != null)
         {
             moveAction.Enable();
+        }
+
+        if (dashAction != null)
+        {
+            dashAction.Enable();
+        }
+
+        if (wallhacksAction != null)
+        {
+            wallhacksAction.Enable();
         }
     }
 
@@ -51,6 +70,20 @@ public class LocalPlayerController : MonoBehaviour
             moveAction.Disable();
             moveAction.Dispose();
             moveAction = null;
+        }
+
+        if (dashAction != null)
+        {
+            dashAction.Disable();
+            dashAction.Dispose();
+            dashAction = null;
+        }
+
+        if (wallhacksAction != null)
+        {
+            wallhacksAction.Disable();
+            wallhacksAction.Dispose();
+            wallhacksAction = null;
         }
     }
 
@@ -89,6 +122,54 @@ public class LocalPlayerController : MonoBehaviour
         moveAction.canceled += ctx => moveValue = Vector2.zero;
     }
 
+    private void CreateDashAction()
+    {
+        dashAction = new InputAction("Dash", InputActionType.Button);
+        if (controlScheme == ControlScheme.Wasd || controlScheme == ControlScheme.Auto)
+        {
+            dashAction.AddBinding("<Keyboard>/space");
+        }
+
+        if (controlScheme == ControlScheme.Arrows || controlScheme == ControlScheme.Auto)
+        {
+            dashAction.AddBinding("<Keyboard>/rightShift");
+        }
+
+        if (controlScheme == ControlScheme.JoyStick || controlScheme == ControlScheme.Auto)
+        {
+            dashAction.AddBinding("<Gamepad>/rightTrigger");
+        }
+
+        dashAction.performed += ctx =>
+        {
+            if (playerDash != null) playerDash.OnDashButtonPressed();
+        };
+    }
+
+    private void CreateWallhacksAction()
+    {
+        wallhacksAction = new InputAction("Wallhacks", InputActionType.Button);
+        if (controlScheme == ControlScheme.Wasd || controlScheme == ControlScheme.Auto)
+        {
+            wallhacksAction.AddBinding("<Keyboard>/leftShift");
+        }
+
+        if (controlScheme == ControlScheme.Arrows || controlScheme == ControlScheme.Auto)
+        {
+            wallhacksAction.AddBinding("<Keyboard>/rightControl");
+        }
+
+        if (controlScheme == ControlScheme.JoyStick || controlScheme == ControlScheme.Auto)
+        {
+            wallhacksAction.AddBinding("<Gamepad>/rightShoulder");
+        }
+
+        wallhacksAction.performed += ctx =>
+        {
+            if (wa != null ) wa.OnPhaseButtonPressed();
+        };
+    }
+
     private void FixedUpdate()
     {
         if (moveAction == null)
@@ -101,10 +182,12 @@ public class LocalPlayerController : MonoBehaviour
         {
             moveValue = read;
         }
+
         if (moveValue.sqrMagnitude > 1f)
         {
             moveValue = moveValue.normalized;
         }
+
         if (rb != null)
         {
             rb.linearVelocity = moveValue * speed;
