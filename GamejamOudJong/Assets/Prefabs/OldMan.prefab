@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3679574948167788471}
   - component: {fileID: 7742681396224951015}
   - component: {fileID: 2876813681303662488}
+  - component: {fileID: -7842367131230121473}
   m_Layer: 0
   m_Name: OldMan
   m_TagString: Untagged
@@ -172,3 +173,16 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 3679574948167788471}
   controlScheme: 2
+--- !u!114 &-7842367131230121473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029682945378974547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79997a9e5ae4f941a8ac4da666b035c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUpScript
+  score: 0
