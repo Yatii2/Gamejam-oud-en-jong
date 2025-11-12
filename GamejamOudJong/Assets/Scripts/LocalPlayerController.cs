@@ -8,7 +8,7 @@ public class LocalPlayerController : MonoBehaviour
 {
     private enum ControlScheme
     {
-        WASD,
+        Wasd,
         Arrows,
         JoyStick,
         Auto
@@ -58,7 +58,7 @@ public class LocalPlayerController : MonoBehaviour
     {
         moveAction = new InputAction("Move", InputActionType.Value, expectedControlType: "Vector2");
 
-        if (controlScheme == ControlScheme.WASD || controlScheme == ControlScheme.Auto)
+        if (controlScheme == ControlScheme.Wasd || controlScheme == ControlScheme.Auto)
         {
             moveAction.AddCompositeBinding("2DVector")
                 .With("Up", "<Keyboard>/w")
