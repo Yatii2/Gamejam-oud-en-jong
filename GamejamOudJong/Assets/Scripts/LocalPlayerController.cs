@@ -17,6 +17,7 @@ public class LocalPlayerController : MonoBehaviour
 
     [Header("Movement")] [SerializeField] private float speed = 5f;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
 
     [Header("Input")]
     [Tooltip("Which scheme this player should use. Configure per-player: one object uses WASD, the other Arrows.")]
@@ -40,7 +41,7 @@ public class LocalPlayerController : MonoBehaviour
 
         playerDash = GetComponent<PlayerDash>();
         wa = GetComponent<Wallhacks>();
-        
+
         CreateMoveAction();
         CreateDashAction();
         CreateWallhacksAction();
@@ -91,7 +92,6 @@ public class LocalPlayerController : MonoBehaviour
     private void CreateMoveAction()
     {
         moveAction = new InputAction("Move", InputActionType.Value, expectedControlType: "Vector2");
-
         if (controlScheme == ControlScheme.Wasd || controlScheme == ControlScheme.Auto)
         {
             moveAction.AddCompositeBinding("2DVector")
@@ -182,6 +182,31 @@ public class LocalPlayerController : MonoBehaviour
         if (read != Vector2.zero)
         {
             moveValue = read;
+            if (read == Vector2.up)
+            {
+                animator.SetBool("IsDown", false);
+                animator.SetBool("IsLeft", false);
+                animator.SetBool("IsUp", true);
+                GetComponent<SpriteRenderer>().flipX = false;
+            } else if  (read == Vector2.down)
+            {
+                animator.SetBool("IsDown", true);
+                animator.SetBool("IsLeft", false);
+                animator.SetBool("IsUp", false);
+                GetComponent<SpriteRenderer>().flipX = false;
+            } else if (read == Vector2.left)
+            {
+                animator.SetBool("IsDown", false);
+                animator.SetBool("IsLeft", true);
+                animator.SetBool("IsUp", false);
+                GetComponent<SpriteRenderer>().flipX = false;
+            } else if (read == Vector2.right)
+            {
+                animator.SetBool("IsDown", false);
+                animator.SetBool("IsLeft", true);
+                animator.SetBool("IsUp", false);
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
 
         if (moveValue.sqrMagnitude > 1f)
@@ -208,7 +233,6 @@ public class LocalPlayerController : MonoBehaviour
         }
 
         moveAction.Disable();
-
         var rebind = moveAction.PerformInteractiveRebinding()
             .WithControlsExcluding("<Mouse>/position")
             .WithControlsExcluding("<Mouse>/leftButton")
@@ -219,7 +243,6 @@ public class LocalPlayerController : MonoBehaviour
                 moveAction.Enable();
                 onComplete?.Invoke();
             });
-
         rebind.Start();
 
         while (!rebind.completed)
