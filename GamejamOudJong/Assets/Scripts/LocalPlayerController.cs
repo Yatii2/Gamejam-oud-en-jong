@@ -17,6 +17,7 @@ public class LocalPlayerController : MonoBehaviour
 
     [Header("Movement")] [SerializeField] private float speed = 5f;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
 
     [Header("Input")]
     [Tooltip("Which scheme this player should use. Configure per-player: one object uses WASD, the other Arrows.")]
@@ -181,6 +182,31 @@ public class LocalPlayerController : MonoBehaviour
         if (read != Vector2.zero)
         {
             moveValue = read;
+            if (read == Vector2.up)
+            {
+                animator.SetBool("IsDown", false);
+                animator.SetBool("IsLeft", false);
+                animator.SetBool("IsUp", true);
+                GetComponent<SpriteRenderer>().flipX = false;
+            } else if  (read == Vector2.down)
+            {
+                animator.SetBool("IsDown", true);
+                animator.SetBool("IsLeft", false);
+                animator.SetBool("IsUp", false);
+                GetComponent<SpriteRenderer>().flipX = false;
+            } else if (read == Vector2.left)
+            {
+                animator.SetBool("IsDown", false);
+                animator.SetBool("IsLeft", true);
+                animator.SetBool("IsUp", false);
+                GetComponent<SpriteRenderer>().flipX = false;
+            } else if (read == Vector2.right)
+            {
+                animator.SetBool("IsDown", false);
+                animator.SetBool("IsLeft", true);
+                animator.SetBool("IsUp", false);
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
 
         if (moveValue.sqrMagnitude > 1f)
