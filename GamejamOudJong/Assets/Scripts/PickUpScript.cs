@@ -4,11 +4,14 @@ using UnityEngine.UI;
 
 public class PickUpScript : MonoBehaviour
 {
+    // Runtime Fields
     public int score = 0;
-    [SerializeField] public int winningScore;
 
+    // Serialize Fields
+    [SerializeField] public int winningScore;
     [SerializeField] private RectTransform oldRect;
     [SerializeField] private RectTransform childRect;
+
     public void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("OnCollisionEnter");
@@ -30,7 +33,7 @@ public class PickUpScript : MonoBehaviour
             {
                 Debug.Log("Child has collected all keys, Child wins!");
                 childRect.gameObject.SetActive(true);
-            } 
+            }
         }
     }
 }

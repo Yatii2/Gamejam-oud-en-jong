@@ -21,22 +21,42 @@ public class Wallhacks : MonoBehaviour
     {
         colliders = GetComponentsInChildren<Collider2D>();
         originalIsTrigger = new bool[colliders.Length];
-        if (cooldownFillImage != null) cooldownFillImage.fillAmount = 0f;
-        if (cooldownText != null) cooldownText.text = "";
+        if (cooldownFillImage != null)
+        {
+            cooldownFillImage.fillAmount = 0f;
+        }
+
+        if (cooldownText != null)
+        {
+            cooldownText.text = "";
+        }
     }
 
     public void OnPhaseButtonPressed()
     {
         if (!isPhasing && !isOnCooldown)
+        {
             StartCoroutine(PhaseRoutine());
+        }
     }
 
     IEnumerator PhaseRoutine()
     {
         isPhasing = true;
-        for (int i = 0; i < colliders.Length; i++) originalIsTrigger[i] = colliders[i].isTrigger;
-        for (int i = 0; i < colliders.Length; i++) colliders[i].isTrigger = true;
-        if (wallhackButton != null) wallhackButton.interactable = false;
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            originalIsTrigger[i] = colliders[i].isTrigger;
+        }
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            colliders[i].isTrigger = true;
+        }
+
+        if (wallhackButton != null)
+        {
+            wallhackButton.interactable = false;
+        }
 
         float t = 0f;
         while (t < phaseDuration)
@@ -45,7 +65,10 @@ public class Wallhacks : MonoBehaviour
             yield return null;
         }
 
-        for (int i = 0; i < colliders.Length; i++) colliders[i].isTrigger = originalIsTrigger[i];
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            colliders[i].isTrigger = originalIsTrigger[i];
+        }
         isPhasing = false;
 
         isOnCooldown = true;
@@ -54,14 +77,32 @@ public class Wallhacks : MonoBehaviour
         {
             t += Time.deltaTime;
             float remaining = Mathf.Max(0f, phaseCooldown - t);
-            if (cooldownFillImage != null) cooldownFillImage.fillAmount = remaining / phaseCooldown;
-            if (cooldownText != null) cooldownText.text = remaining > 0.05f ? remaining.ToString("F1") + "s" : "";
+            if (cooldownFillImage != null)
+            {
+                cooldownFillImage.fillAmount = remaining / phaseCooldown;
+            }
+
+            if (cooldownText != null)
+            {
+                cooldownText.text = remaining > 0.05f ? remaining.ToString("F1") + "s" : "";
+            }
             yield return null;
         }
 
-        if (cooldownFillImage != null) cooldownFillImage.fillAmount = 0f;
-        if (cooldownText != null) cooldownText.text = "";
-        if (wallhackButton != null) wallhackButton.interactable = true;
+        if (cooldownFillImage != null)
+        {
+            cooldownFillImage.fillAmount = 0f;
+        }
+
+        if (cooldownText != null)
+        {
+            cooldownText.text = "";
+        }
+
+        if (wallhackButton != null)
+        {
+            wallhackButton.interactable = true;
+        }
         isOnCooldown = false;
     }
 

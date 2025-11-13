@@ -40,7 +40,7 @@ public class LocalPlayerController : MonoBehaviour
 
         playerDash = GetComponent<PlayerDash>();
         wa = GetComponent<Wallhacks>();
-        
+
         CreateMoveAction();
         CreateDashAction();
         CreateWallhacksAction();
@@ -91,7 +91,6 @@ public class LocalPlayerController : MonoBehaviour
     private void CreateMoveAction()
     {
         moveAction = new InputAction("Move", InputActionType.Value, expectedControlType: "Vector2");
-
         if (controlScheme == ControlScheme.Wasd || controlScheme == ControlScheme.Auto)
         {
             moveAction.AddCompositeBinding("2DVector")
@@ -208,7 +207,6 @@ public class LocalPlayerController : MonoBehaviour
         }
 
         moveAction.Disable();
-
         var rebind = moveAction.PerformInteractiveRebinding()
             .WithControlsExcluding("<Mouse>/position")
             .WithControlsExcluding("<Mouse>/leftButton")
@@ -219,7 +217,6 @@ public class LocalPlayerController : MonoBehaviour
                 moveAction.Enable();
                 onComplete?.Invoke();
             });
-
         rebind.Start();
 
         while (!rebind.completed)
